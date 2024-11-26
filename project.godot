@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Orion"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scn/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
-config/icon="res://icon.png"
+config/icon="res://img/icon.png"
 
 [display]
 
