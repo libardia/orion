@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctsaw05kl2uaa"]
+
+[ext_resource type="Script" path="res://scenes/main/main-global.gd" id="1_7qc7i"]
+[ext_resource type="Script" path="res://scenes/main/title-animate.gd" id="2_seo5k"]
+[ext_resource type="Theme" uid="uid://ix5axufhiij" path="res://themes/title-buttons.tres" id="3_lbwdl"]
+[ext_resource type="Script" path="res://scenes/main/quit-button.gd" id="4_j8dog"]
+[ext_resource type="Script" path="res://scenes/main/start-button.gd" id="4_wg08d"]
+[ext_resource type="AudioStream" uid="uid://bnp6ggjurtdma" path="res://assets/sound/quit.wav" id="6_tv2uo"]
+[ext_resource type="AudioStream" uid="uid://bokaxidtkhgko" path="res://assets/sound/ui-select.wav" id="7_ghs3v"]
+[ext_resource type="AudioStream" uid="uid://dm8fnre8l5i55" path="res://assets/sound/focus-gain.wav" id="8_arome"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_obajl"]
+font_size = 300
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 80
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(16, 16)
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_7qc7i")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Orion"
+label_settings = SubResource("LabelSettings_obajl")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_seo5k")
+rotation_speed = 2.83
+scale_speed = 3.7
+scale_variation = 0.055
+rotation_variation = 3.335
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_lbwdl")
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_lbwdl")
+text = "Start"
+script = ExtResource("4_wg08d")
+
+[node name="quit" type="Button" parent="VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_lbwdl")
+text = "Quit"
+script = ExtResource("4_j8dog")
+
+[node name="button_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+stream = ExtResource("7_ghs3v")
+max_polyphony = 100
+
+[node name="focus_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+stream = ExtResource("8_arome")
+
+[node name="quit_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+stream = ExtResource("6_tv2uo")
