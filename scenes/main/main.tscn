@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctsaw05kl2uaa"]
-
-[ext_resource type="Script" path="res://scenes/main/main-global.gd" id="1_7qc7i"]
-[ext_resource type="PackedScene" uid="uid://ob6lcl4q8xqt" path="res://prefab/title_menu.tscn" id="2_m0brn"]
-
-[node name="main_root" type="Node2D"]
-script = ExtResource("1_7qc7i")
-
-[node name="title_menu" parent="." instance=ExtResource("2_m0brn")]
