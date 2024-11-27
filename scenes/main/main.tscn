@@ -26,6 +26,19 @@ offset_bottom = 1080.0
 theme_override_constants/separation = 100
 alignment = 1
 
+[node name="button_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+stream = ExtResource("7_ghs3v")
+max_polyphony = 100
+
+[node name="focus_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+stream = ExtResource("8_arome")
+
+[node name="quit_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+stream = ExtResource("6_tv2uo")
+
 [node name="Title" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -63,16 +76,3 @@ size_flags_vertical = 4
 theme = ExtResource("3_lbwdl")
 text = "Quit"
 script = ExtResource("4_j8dog")
-
-[node name="button_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
-unique_name_in_owner = true
-stream = ExtResource("7_ghs3v")
-max_polyphony = 100
-
-[node name="focus_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
-unique_name_in_owner = true
-stream = ExtResource("8_arome")
-
-[node name="quit_sound" type="AudioStreamPlayer" parent="VBoxContainer2"]
-unique_name_in_owner = true
-stream = ExtResource("6_tv2uo")
