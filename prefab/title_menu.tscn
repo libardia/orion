@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://ob6lcl4q8xqt"]
+
+[ext_resource type="AudioStream" uid="uid://bokaxidtkhgko" path="res://assets/sound/ui-select.wav" id="1_2vdxh"]
+[ext_resource type="Script" path="res://prefab/title_menu.gd" id="1_ime2m"]
+[ext_resource type="AudioStream" uid="uid://dm8fnre8l5i55" path="res://assets/sound/focus-gain.wav" id="2_fylya"]
+[ext_resource type="AudioStream" uid="uid://bnp6ggjurtdma" path="res://assets/sound/quit.wav" id="3_djihv"]
+[ext_resource type="Theme" uid="uid://ix5axufhiij" path="res://themes/title-buttons.tres" id="5_a5nj6"]
+[ext_resource type="Script" path="res://prefab/title-animate.gd" id="5_s6j4o"]
+[ext_resource type="Script" path="res://prefab/start-button.gd" id="7_bfxt8"]
+[ext_resource type="Script" path="res://prefab/quit-button.gd" id="8_hifon"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3bgl3"]
+font_size = 300
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 80
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(16, 16)
+
+[node name="title_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ime2m")
+
+[node name="VBoxContainer-outer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="button_sound" type="AudioStreamPlayer" parent="VBoxContainer-outer"]
+unique_name_in_owner = true
+stream = ExtResource("1_2vdxh")
+max_polyphony = 100
+
+[node name="focus_sound" type="AudioStreamPlayer" parent="VBoxContainer-outer"]
+unique_name_in_owner = true
+stream = ExtResource("2_fylya")
+
+[node name="quit_sound" type="AudioStreamPlayer" parent="VBoxContainer-outer"]
+unique_name_in_owner = true
+stream = ExtResource("3_djihv")
+
+[node name="Title" type="Label" parent="VBoxContainer-outer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Orion"
+label_settings = SubResource("LabelSettings_3bgl3")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_s6j4o")
+rotation_speed = 2.83
+scale_speed = 3.7
+scale_variation = 0.055
+rotation_variation = 3.335
+
+[node name="VBoxContainer-buttons" type="VBoxContainer" parent="VBoxContainer-outer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_a5nj6")
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer-outer/VBoxContainer-buttons"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_a5nj6")
+text = "Start"
+script = ExtResource("7_bfxt8")
+
+[node name="quit" type="Button" parent="VBoxContainer-outer/VBoxContainer-buttons"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_a5nj6")
+text = "Quit"
+script = ExtResource("8_hifon")
