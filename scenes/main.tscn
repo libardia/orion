@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://cveruox8lxrvy"]
+
+[ext_resource type="Script" path="res://global-scripts/debug-quit.gd" id="1_ly7q5"]
+[ext_resource type="Script" path="res://global-scripts/ui-common.gd" id="1_nfsay"]
+[ext_resource type="AudioStream" uid="uid://bokaxidtkhgko" path="res://assets/sound/ui-select.wav" id="2_l0hte"]
+[ext_resource type="Script" path="res://global-scripts/scene-manager.gd" id="2_sl7ry"]
+[ext_resource type="AudioStream" uid="uid://dm8fnre8l5i55" path="res://assets/sound/focus-gain.wav" id="3_ioyva"]
+[ext_resource type="AudioStream" uid="uid://bnp6ggjurtdma" path="res://assets/sound/quit.wav" id="4_xgdy5"]
+[ext_resource type="PackedScene" uid="uid://ctsaw05kl2uaa" path="res://scenes/title/title.tscn" id="6_r47xv"]
+
+[node name="Main" type="Node"]
+
+[node name="DebugQuit" type="Node" parent="."]
+script = ExtResource("1_ly7q5")
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("2_sl7ry")
+initial_scene = ExtResource("6_r47xv")
+
+[node name="UICommon" type="Node" parent="."]
+script = ExtResource("1_nfsay")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="UICommon"]
+unique_name_in_owner = true
+stream = ExtResource("2_l0hte")
+max_polyphony = 100
+
+[node name="FocusSound" type="AudioStreamPlayer" parent="UICommon"]
+unique_name_in_owner = true
+stream = ExtResource("3_ioyva")
+
+[node name="QuitSound" type="AudioStreamPlayer" parent="UICommon"]
+unique_name_in_owner = true
+stream = ExtResource("4_xgdy5")
+
+[node name="ActiveScene" type="Node" parent="."]
+unique_name_in_owner = true

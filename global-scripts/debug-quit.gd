@@ -1,8 +1,4 @@
-extends Node2D
-
-
-func _ready() -> void:
-    UICommon.init(self)
+extends Node
 
 
 func _input(event: InputEvent) -> void:

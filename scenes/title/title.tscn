@@ -1,13 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctsaw05kl2uaa"]
+[gd_scene load_steps=6 format=3 uid="uid://ctsaw05kl2uaa"]
 
-[ext_resource type="Script" path="res://scenes/title/main-global.gd" id="1_2xqik"]
-[ext_resource type="AudioStream" uid="uid://bokaxidtkhgko" path="res://assets/sound/ui-select.wav" id="2_8w32s"]
-[ext_resource type="AudioStream" uid="uid://dm8fnre8l5i55" path="res://assets/sound/focus-gain.wav" id="3_cwnww"]
-[ext_resource type="AudioStream" uid="uid://bnp6ggjurtdma" path="res://assets/sound/quit.wav" id="4_halqn"]
-[ext_resource type="Script" path="res://scenes/title/title-animate.gd" id="5_hokw1"]
+[ext_resource type="Script" path="res://scenes/title/title_animate.gd" id="5_hokw1"]
 [ext_resource type="Theme" uid="uid://ix5axufhiij" path="res://themes/title-buttons.tres" id="6_ia5hf"]
-[ext_resource type="Script" path="res://scenes/title/start-button.gd" id="7_2ylmh"]
-[ext_resource type="Script" path="res://scenes/title/quit-button.gd" id="8_pokd5"]
+[ext_resource type="Script" path="res://scenes/title/start_button.gd" id="7_2ylmh"]
+[ext_resource type="Script" path="res://scenes/title/quit_button.gd" id="8_pokd5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvf7a"]
 font_size = 300
@@ -17,30 +13,18 @@ shadow_size = 80
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(16, 16)
 
-[node name="title_root" type="Node2D"]
-script = ExtResource("1_2xqik")
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="VBoxContainer-outer" type="VBoxContainer" parent="."]
+[node name="TitleContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-size_flags_horizontal = 3
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="button_sound" type="AudioStreamPlayer" parent="VBoxContainer-outer"]
-unique_name_in_owner = true
-stream = ExtResource("2_8w32s")
-max_polyphony = 100
-
-[node name="focus_sound" type="AudioStreamPlayer" parent="VBoxContainer-outer"]
-unique_name_in_owner = true
-stream = ExtResource("3_cwnww")
-
-[node name="quit_sound" type="AudioStreamPlayer" parent="VBoxContainer-outer"]
-unique_name_in_owner = true
-stream = ExtResource("4_halqn")
-
-[node name="Title" type="Label" parent="VBoxContainer-outer"]
+[node name="TitleLabel" type="Label" parent="TitleContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Orion"
@@ -53,14 +37,14 @@ scale_speed = 3.7
 scale_variation = 0.055
 rotation_variation = 3.335
 
-[node name="VBoxContainer-buttons" type="VBoxContainer" parent="VBoxContainer-outer"]
+[node name="Buttons" type="VBoxContainer" parent="TitleContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("6_ia5hf")
 alignment = 1
 
-[node name="start" type="Button" parent="VBoxContainer-outer/VBoxContainer-buttons"]
+[node name="StartButton" type="Button" parent="TitleContainer/Buttons"]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -69,7 +53,7 @@ theme = ExtResource("6_ia5hf")
 text = "Start"
 script = ExtResource("7_2ylmh")
 
-[node name="quit" type="Button" parent="VBoxContainer-outer/VBoxContainer-buttons"]
+[node name="QuitButton" type="Button" parent="TitleContainer/Buttons"]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 4
