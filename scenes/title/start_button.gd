@@ -6,8 +6,5 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
-	print_debug("PRESSED!?!?!?!?")
 	UICommon.button_sound.play()
-	var sc = preload("res://scenes/level/level.tscn")
-	print_debug("To change: %s" % sc)
-	SceneManager.change_scene(sc)
+	SceneManager.change_scene(preload("res://scenes/level/level.tscn"))

@@ -17,15 +17,9 @@ func _ready():
 
 
 static func change_scene(scene: PackedScene) -> void:
-	print_debug("Context: %s" % context)
-	print_debug("Active root: %s" % active_scene_root)
-	print_debug("Packed: %s" % scene)
-	print_debug("Previous: %s" % active_scene)
 	if active_scene != null:
 		active_scene_root.remove_child(active_scene)
-		active_scene.free()
+		active_scene.queue_free()
 	var new_scene: Node = scene.instantiate()
-	print_debug("Instantiated new: %s" % new_scene)
 	active_scene_root.add_child(new_scene)
 	active_scene = new_scene
-	print_debug("New active scene: %s" % new_scene)
