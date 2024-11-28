@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctsaw05kl2uaa"]
+[gd_scene load_steps=7 format=3 uid="uid://ctsaw05kl2uaa"]
 
+[ext_resource type="FontFile" uid="uid://lyep8ycpd5dd" path="res://assets/Kenney Blocks.ttf" id="1_bynee"]
 [ext_resource type="Script" path="res://scenes/title/title_animate.gd" id="5_hokw1"]
 [ext_resource type="Theme" uid="uid://ix5axufhiij" path="res://themes/title-buttons.tres" id="6_ia5hf"]
 [ext_resource type="Script" path="res://scenes/title/start_button.gd" id="7_2ylmh"]
 [ext_resource type="Script" path="res://scenes/title/quit_button.gd" id="8_pokd5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvf7a"]
+font = ExtResource("1_bynee")
 font_size = 300
 outline_size = 30
 outline_color = Color(0, 0, 0, 1)

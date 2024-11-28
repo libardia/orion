@@ -1,6 +1,36 @@
-[gd_resource type="Theme" format=3 uid="uid://ix5axufhiij"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ix5axufhiij"]
+
+[ext_resource type="FontFile" uid="uid://lyep8ycpd5dd" path="res://assets/Kenney Blocks.ttf" id="1_f4lqe"]
+[ext_resource type="StyleBox" uid="uid://didpt0mjs4eiv" path="res://new_style_box_texture.tres" id="2_qrode"]
+[ext_resource type="StyleBox" uid="uid://3lq6xdsxf6mn" path="res://new_style_box_texture2.tres" id="3_nc87l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swk21"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.109804, 0.623529, 0.843137, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [resource]
-Button/constants/outline_size = 20
-Button/font_sizes/font_size = 72
+Button/colors/font_color = Color(0.228143, 0.232878, 0.288351, 1)
+Button/colors/font_focus_color = Color(0.227451, 0.231373, 0.290196, 1)
+Button/colors/font_hover_color = Color(0.31747, 0.322535, 0.397252, 1)
+Button/colors/font_pressed_color = Color(0.158461, 0.16207, 0.204592, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_f4lqe")
+Button/styles/disabled = ExtResource("2_qrode")
+Button/styles/focus = SubResource("StyleBoxFlat_swk21")
+Button/styles/hover = ExtResource("2_qrode")
+Button/styles/normal = ExtResource("2_qrode")
+Button/styles/pressed = ExtResource("3_nc87l")
 VBoxContainer/constants/separation = 25
