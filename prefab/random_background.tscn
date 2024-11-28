@@ -1,5 +1,17 @@
-[gd_scene format=3 uid="uid://p6e3g7ij2whx"]
+[gd_scene load_steps=8 format=3 uid="uid://p6e3g7ij2whx"]
+
+[ext_resource type="Script" path="res://prefab/random_background.gd" id="1_7tvgk"]
+[ext_resource type="Texture2D" uid="uid://bjt1h3de8d8fu" path="res://assets/img/star_tiny.png" id="2_kte8b"]
+[ext_resource type="Texture2D" uid="uid://8c02bniw5lnv" path="res://assets/img/star_small.png" id="3_7lf62"]
+[ext_resource type="Texture2D" uid="uid://cbv344apm2mcy" path="res://assets/img/star_medium.png" id="4_k6gfj"]
+[ext_resource type="Texture2D" uid="uid://cik4vw6waqstk" path="res://assets/img/star_large.png" id="5_vs4x7"]
+[ext_resource type="Texture2D" uid="uid://beed7pgtm6fxl" path="res://assets/img/meteor_detailedSmall.png" id="6_360b8"]
+[ext_resource type="Texture2D" uid="uid://bbp1wyvn2prbg" path="res://assets/img/meteor_detailedLarge.png" id="7_lu3an"]
 
 [node name="RandomBackground" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+script = ExtResource("1_7tvgk")
+features = Array[Texture]([ExtResource("2_kte8b"), ExtResource("3_7lf62"), ExtResource("4_k6gfj"), ExtResource("5_vs4x7"), ExtResource("6_360b8"), ExtResource("7_lu3an")])
+feature_weights = Array[int]([10, 10, 10, 10, 1, 1])
+num_features = 250
+feature_scale = 0.15
+overscan = 100.0
