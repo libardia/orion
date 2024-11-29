@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctsaw05kl2uaa"]
+[gd_scene load_steps=8 format=3 uid="uid://ctsaw05kl2uaa"]
 
+[ext_resource type="PackedScene" uid="uid://p6e3g7ij2whx" path="res://prefab/random_background.tscn" id="1_8wrs0"]
 [ext_resource type="FontFile" uid="uid://lyep8ycpd5dd" path="res://assets/Kenney Blocks.ttf" id="1_bynee"]
 [ext_resource type="Script" path="res://scenes/title/title_animate.gd" id="5_hokw1"]
 [ext_resource type="Theme" uid="uid://ix5axufhiij" path="res://themes/title-buttons.tres" id="6_ia5hf"]
@@ -15,14 +16,11 @@ shadow_size = 80
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(16, 16)
 
-[node name="Title" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 2.0
-offset_bottom = 2.0
+[node name="Title" type="Node2D"]
+
+[node name="RandomBackground" parent="." instance=ExtResource("1_8wrs0")]
 
 [node name="TitleContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_constants/separation = 100

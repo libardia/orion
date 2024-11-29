@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://c2wqwfxlktnpq"]
+[gd_scene load_steps=2 format=3 uid="uid://c2wqwfxlktnpq"]
+
+[ext_resource type="PackedScene" uid="uid://p6e3g7ij2whx" path="res://prefab/random_background.tscn" id="1_fb31e"]
 
 [node name="Level" type="Node2D"]
+
+[node name="RandomBackground" parent="." instance=ExtResource("1_fb31e")]
